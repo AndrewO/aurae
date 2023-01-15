@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- *\
- *             Apache 2.0 License Copyright © 2022 The Aurae Authors          *
+ *             Apache 2.0 License Copyright © 2022-2023 The Aurae Authors          *
  *                                                                            *
  *                +--------------------------------------------+              *
  *                |   █████╗ ██╗   ██╗██████╗  █████╗ ███████╗ |              *
@@ -28,9 +28,5 @@
  *                                                                            *
 \* -------------------------------------------------------------------------- */
 
-macros::service!(
-    grpc::health,
-    Health,
-    check(HealthCheckRequest) -> HealthCheckResponse,
-    watch(HealthCheckRequest) -> [HealthCheckResponse]
-);
+pub mod image_service;
+pub mod runtime_service;

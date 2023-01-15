@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- *\
- *             Apache 2.0 License Copyright © 2022 The Aurae Authors          *
+ *             Apache 2.0 License Copyright © 2022-2023 The Aurae Authors          *
  *                                                                            *
  *                +--------------------------------------------+              *
  *                |   █████╗ ██╗   ██╗██████╗  █████╗ ███████╗ |              *
@@ -29,8 +29,11 @@
 \* -------------------------------------------------------------------------- */
 
 macros::service!(
-    grpc::health,
-    Health,
-    check(HealthCheckRequest) -> HealthCheckResponse,
-    watch(HealthCheckRequest) -> [HealthCheckResponse]
+    kubernetes::cri,
+    ImageService,
+    list_images(ListImagesRequest) -> ListImagesResponse,
+    image_status(ImageStatusRequest) -> ImageStatusResponse,
+    pull_image(PullImageRequest) -> PullImageResponse,
+    remove_image(RemoveImageRequest) -> RemoveImageResponse,
+    image_fs_info(ImageFsInfoRequest) -> ImageFsInfoResponse,
 );
