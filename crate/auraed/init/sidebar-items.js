@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["SocketStream","A [SocketStream] can represent either a TCP or Unix socket stream."]],"fn":[["init","Initialize aurae, depending on our context."]]};
